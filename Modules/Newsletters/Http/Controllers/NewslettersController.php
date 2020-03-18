@@ -1,27 +1,20 @@
 <?php
 
-namespace Modules\Dashboard\Http\Controllers;
+namespace Modules\Newsletters\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
-use Carbon\Carbon;
-
-class DashboardController extends Controller
+class NewslettersController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index()
     {
-        return view('dashboard::index');
+        return view('newsletters::index');
     }
 
     /**
@@ -30,7 +23,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('dashboard::create');
+        return view('newsletters::create');
     }
 
     /**
@@ -50,7 +43,7 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        return view('dashboard::show');
+        return view('newsletters::show');
     }
 
     /**
@@ -60,7 +53,7 @@ class DashboardController extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard::edit');
+        return view('newsletters::edit');
     }
 
     /**

@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', ['uses' => '\Modules\Dashboard\Http\Controllers\DashboardController@index']);
-Auth::routes();
-
-//Route::get('dashboard',['uses' => '\Modules\Artists\Http\Controllers\PostsController@create']);
-
-// Route::get('dashboard',['uses' => '\Modules\Dashboard\Http\Controllers\DashboardController@index']);
-
-// Auth::routes();
+Route::prefix('newsletters')->group(function() {
+    Route::get('/', 'NewslettersController@index');
+});

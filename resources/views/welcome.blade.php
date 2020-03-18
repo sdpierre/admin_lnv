@@ -97,7 +97,30 @@
 				
 			
 
-				
+				<li>
+					<a href="/user">
+						<i class="entypo-mail"></i>
+						<span class="title">Newsletters</span>
+					</a>
+					<ul>
+						<li>
+							<a href="{{ url('/') }}/newsletters/">
+								<span class="title">All newsletters</span>
+							</a>
+						</li>
+						<li>
+							<a href="/user/">
+								<span class="title">All emails</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="/user/create">
+								<span class="title">Custom</span>
+							</a>
+						</li>
+					</ul>
+				</li>
 
 				<li>
 					<a href="/user">
@@ -197,7 +220,7 @@
 					<li class="sep"></li>
 
 					<li>
-					<form method="POST" action="/logout">
+					<form method="POST" action="{{ url('/') }}/logout">
 					    {!! csrf_field() !!}
 					    <button type="submit" class="btn btn-link">Se déconnecter <i class="entypo-logout right"></i></button>
 					</form>
