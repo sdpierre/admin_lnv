@@ -9,6 +9,7 @@
                 <tr>
                     <th>Photo</th>
                     <th>Name</th>
+                    <th>Url</th>
                     <th>Caption</th>
                     <th>Decription</th>
                     <th>Date and hours</th>
@@ -20,6 +21,7 @@
                 <tr>
                     <td><img src="https://asset.lemde.fr/newsletters/thumbnails/a-la-une.png" width="100" height="100"></td>
                     <td>A la une</td>
+                    <td>https://asset.lemde.fr/newsletters/a-la-une/2020-03-03.html</td>
                     <td>7 jours sur 7, à 8 h 30</td>
                     <td>Les titres du Lenouvelliste.com en un coup d’oeil.</td>
                     <td> 0 13 * * 1</td>
@@ -47,13 +49,16 @@
                     <div class="form-group"> <label class="control-label">Description</label>
                         <input type="text" class="form-control" name="name" data-validate="required" data-message-required="This is custom message for required field." placeholder="Required Field">
                     </div>
+                    <div class="form-group"> <label class="control-label">Url</label>
+                        <input type="text" class="form-control" name="name" data-validate="required" data-message-required="This is custom message for required field." placeholder="Required Field">
+                    </div>
                     <div class="form-group"> <label class="control-label">Photo</label>
                         <input type="text" class="form-control" name="name" data-validate="required" data-message-required="This is custom message for required field." placeholder="Required Field">
                     </div>
                     <div class="form-group"> <label class="control-label">Date and hours</label>
                         <input type="text" class="form-control" name="name" data-validate="required" data-message-required="This is custom message for required field." placeholder="Required Field">
                     </div>
-                    <div class="form-group"> <button type="submit" class="btn btn-success">Validate</button> <button type="reset" class="btn">Reset</button> </div>
+                    <div class="form-group"> <button type="submit" class="btn btn-success">Save</button> <button type="reset" class="btn">Reset</button> </div>
             </div>
             </form>
         </div>
