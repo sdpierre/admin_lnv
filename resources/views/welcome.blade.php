@@ -96,6 +96,24 @@
 				</li>
 				
 			
+				<li>
+					<a href="{{ url('/') }}/medias">
+						<i class="entypo-camera"></i>
+						<span class="title">Médias</span>
+					</a>
+					<ul>
+						<li>
+							<a href="{{ url('/') }}/medias/">
+								<span class="title">Bibliothèque</span>
+							</a>
+						</li>
+						<li>
+							<a href="{{ url('/') }}/medias-new/">
+								<span class="title">Ajouter</span>
+							</a>
+						</li>
+					</ul>
+				</li>
 
 				<li>
 					<a href="/user">
