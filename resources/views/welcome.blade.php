@@ -141,6 +141,25 @@
 				</li>
 
 				<li>
+					<a href="/caricatures">
+						<i class="entypo-brush"></i>
+						<span class="title">Caricatures</span>
+					</a>
+					<ul>
+						<li>
+							<a href="{{ url('/') }}/caricatures">
+								<span class="title">All Caricatures</span>
+							</a>
+						</li>
+						<li>
+							<a href="{{ url('/') }}/caricatures-new/">
+								<span class="title">Add new</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
 					<a href="/user">
 						<i class="entypo-users"></i>
 						<span class="title">Users</span>
@@ -278,10 +297,8 @@
 
 	@yield('javascript')
 
-
 	<!-- JavaScripts initializations and stuff -->
 	<script src="{{ asset('js/neon-custom.js') }}"></script>
-
 
 	<!-- Demo Settings -->
 	<script src="{{ asset('js/neon-demo.js') }}"></script>
