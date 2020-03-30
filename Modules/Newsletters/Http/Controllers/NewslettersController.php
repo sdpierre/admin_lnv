@@ -2,9 +2,10 @@
 
 namespace Modules\Newsletters\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Http\Response;
+use Illuminate\Http\Request;
+use App\NewsLetter;
 
 class NewslettersController extends Controller
 {
@@ -14,7 +15,8 @@ class NewslettersController extends Controller
      */
     public function index()
     {
-        return view('newsletters::index');
+        $newsLetters = NewsLetter::orderBy('id', 'DESC')->get()->all();
+        return view('newsletters::index')->with('newsLetters', $newsLetters);
     }
 
     /**
@@ -33,7 +35,20 @@ class NewslettersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        /*if ($request->hasFile('photo')) {
+            die('yes');
+        } die('no');*/
+        $createNews              = new NewsLetter();
+        $createNews->title       = $request->title;
+        $createNews->caption     = $request->caption;
+        $createNews->description = $request->description;
+        $createNews->url         = $request->url;
+        $createNews->photo       = " ";
+        $createNews->date        = $request->date;
+        $createNews->active      = 1;
+        $newsCreated             = $createNews->save();
+        return redirect('newsletters');
     }
 
     /**
@@ -53,7 +68,9 @@ class NewslettersController extends Controller
      */
     public function edit($id)
     {
-        return view('newsletters::edit');
+        $editNews = NewsLetter::findOrFail($id);
+        $newsLetters = NewsLetter::orderBy('id', 'DESC')->get()->all();
+        return view('newsletters::edit')->with('editNews', $editNews)->with('newsLetters', $newsLetters);
     }
 
     /**
@@ -64,7 +81,16 @@ class NewslettersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updateNews = NewsLetter::findOrFail($id);
+        $updateNews->title       = $request->title;
+        $updateNews->caption     = $request->caption;
+        $updateNews->description = $request->description;
+        $updateNews->url         = $request->url;
+        $updateNews->photo       = " ";
+        $updateNews->date        = $request->date;
+        $updateNews->active      = 1;
+        $updatednews             = $updateNews->update();
+        return redirect('newsletters');
     }
 
     /**
@@ -74,6 +100,7 @@ class NewslettersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        NewsLetter::destroy($id);
+        return redirect('newsletters');
     }
 }

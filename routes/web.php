@@ -19,3 +19,4 @@ Auth::routes();
 // Route::get('dashboard',['uses' => '\Modules\Dashboard\Http\Controllers\DashboardController@index']);
 
 // Auth::routes();
+

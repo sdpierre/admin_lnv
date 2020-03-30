@@ -45,28 +45,28 @@
     <div class="col-sm-4">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <form role="form" id="form1" method="POST" enctype="mutipart/form-data" class="validate" novalidate="novalidate" action="{{ route('newsletters-store') }}">
+                <form role="form" id="form1" method="POST" enctype="mutipart/form-data" class="validate" novalidate="novalidate" action="{{ route('newsletters-update', [$editNews->id]) }}">
                     {{csrf_field()}}
                     <div class="form-group"> <label class="control-label">Title</label>
-                        <input type="text" class="form-control" name="title" data-validate="required" required placeholder="Enter Title">
+                        <input type="text" class="form-control" name="title" data-validate="required" required placeholder="Enter Title" value="{{ $editNews->title }}">
                     </div>
                     <div class="form-group"> <label class="control-label">Caption</label>
-                        <input type="text" class="form-control" name="caption" data-validate="required"placeholder="Enter Caption">
+                        <input type="text" class="form-control" name="caption" data-validate="required"placeholder="Enter Caption" value="{{ $editNews->caption }}">
                     </div>
                     <div class="form-group"> <label class="control-label">Description</label>
-                        <input type="text" class="form-control" name="description" data-validate="required"placeholder="Enter Description">
+                        <input type="text" class="form-control" name="description" data-validate="required"placeholder="Enter Description" value="{{ $editNews->description }}">
                     </div>
                     <div class="form-group"> <label class="control-label">Url</label>
-                        <input type="text" class="form-control" name="url" data-validate="required" placeholder="Enter Url">
+                        <input type="text" class="form-control" name="url" data-validate="required" placeholder="Enter Url" value="{{ $editNews->url }}">
                     </div>
                     <div class="form-group"> <label class="control-label">Photo</label>
-                        <input type="file" class="form-control" name="photo" data-validate="required">
+                        <input type="file" class="form-control" name="photo" data-validate="required" >
                     </div>
                     <div class="form-group"> <label class="control-label">Date and hours</label>
-                        <input type="date" class="form-control" name="date" data-validate="required"placeholder="Select" Required>
+                        <input type="date" class="form-control" name="date" data-validate="required"placeholder="Select" Required value="{{ $editNews->date }}">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="submit" class="btn btn-success">Update</button>
                         <button type="reset" class="btn">Reset</button>
                     </div>
                 </form>
