@@ -21,15 +21,22 @@
             <tbody>
                 @foreach ($newsLetters as $newsLetter)
                 <tr>
-                    <td><img src="https://asset.lemde.fr/newsletters/thumbnails/a-la-une.png" width="100" height="100"></td>
+                    <td>
+                        <img src="https://asset.lemde.fr/newsletters/thumbnails/a-la-une.png" width="100" height="100"></td>
                     <td>{{ $newsLetter->title }}</td>
                     <td>{{ $newsLetter->url }}</td>
                     <td>{{ $newsLetter->caption }}</td>
                     <td>{{ $newsLetter->description }}</td>
                     <td>{{ $newsLetter->title }}</td>
                     <td>
+                        {{ $newsLetter->status }}
                         <div class="make-switch switch-mini has-switch">
-                            <div class="switch-off switch-animate"><input type="checkbox"><span class="switch-left switch-mini">ON</span><label class="switch-mini">&nbsp;</label><span class="switch-right switch-mini">OFF</span></div>
+                            <div class="switch-off switch-animate switch">
+                                <input type="checkbox">
+                                <span class="switch-left switch-mini">ON</span>
+                                <label class="switch-mini">&nbsp;</label>
+                                <span class="switch-right switch-mini">OFF</span>
+                            </div>
                         </div>
                     </td>
                     <td class="d-flex">
@@ -45,7 +52,7 @@
     <div class="col-sm-4">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <form role="form" id="form1" method="POST" enctype="mutipart/form-data" class="validate" novalidate="novalidate" action="{{ route('newsletters-store') }}">
+                <form role="form" id="form1" method="POST" enctype="multipart/form-data" class="validate" novalidate="novalidate" action="{{ route('newsletters-store') }}">
                     {{csrf_field()}}
                     <div class="form-group"> <label class="control-label">Title</label>
                         <input type="text" class="form-control" name="title" data-validate="required" required placeholder="Enter Title">
@@ -60,7 +67,7 @@
                         <input type="text" class="form-control" name="url" data-validate="required" placeholder="Enter Url">
                     </div>
                     <div class="form-group"> <label class="control-label">Photo</label>
-                        <input type="file" class="form-control" name="photo" data-validate="required">
+                        <input type="file" class="form-control" name="photo" data-validate="required" accept="image/x-png,image/gif,image/jpeg" />
                     </div>
                     <div class="form-group"> <label class="control-label">Date and hours</label>
                         <input type="date" class="form-control" name="date" data-validate="required"placeholder="Select" Required>

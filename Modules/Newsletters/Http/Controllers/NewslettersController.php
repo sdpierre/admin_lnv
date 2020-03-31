@@ -2,6 +2,7 @@
 
 namespace Modules\Newsletters\Http\Controllers;
 
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
@@ -9,13 +10,29 @@ use App\NewsLetter;
 
 class NewslettersController extends Controller
 {
+    protected $url;
+
+    public function __construct(UrlGenerator $url)
+    {
+        $this->url = $url;
+    }
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index()
     {
+        $baseUrl = $this->url->to('/');
         $newsLetters = NewsLetter::orderBy('id', 'DESC')->get()->all();
+        foreach ($newsLetters as $key => $value) {
+            $photo = $value->photo;
+            if ($photo) {
+                $newsLetters[$key]->photo = $baseUrl;
+            } else {
+                $newsLetters[$key]->photo = 'not';
+            }
+        }
         return view('newsletters::index')->with('newsLetters', $newsLetters);
     }
 
@@ -36,15 +53,20 @@ class NewslettersController extends Controller
     public function store(Request $request)
     {
 
-        /*if ($request->hasFile('photo')) {
-            die('yes');
-        } die('no');*/
+        if ($request->hasFile('photo')) {
+            $target_dir = public_path()."/uploads/photo/";
+            $target_file = $target_dir . basename($_FILES["photo"]["name"]);
+            //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
+            $photo = $_FILES["photo"]["name"];
+        }
+        $photo = 'photo not selected';
         $createNews              = new NewsLetter();
         $createNews->title       = $request->title;
         $createNews->caption     = $request->caption;
         $createNews->description = $request->description;
         $createNews->url         = $request->url;
-        $createNews->photo       = " ";
+        $createNews->photo       = $photo;
         $createNews->date        = $request->date;
         $createNews->active      = 1;
         $newsCreated             = $createNews->save();
@@ -81,6 +103,14 @@ class NewslettersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if ($request->hasFile('photo')) {
+            $target_dir = public_path()."/uploads/photo/";
+            $target_file = $target_dir . basename($_FILES["photo"]["name"]);
+            //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
+            $photo = $_FILES["photo"]["name"];
+        }
+        $photo = 'photo not selected';
         $updateNews = NewsLetter::findOrFail($id);
         $updateNews->title       = $request->title;
         $updateNews->caption     = $request->caption;

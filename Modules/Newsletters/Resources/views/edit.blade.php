@@ -45,7 +45,7 @@
     <div class="col-sm-4">
         <div class="panel panel-primary">
             <div class="panel-body">
-                <form role="form" id="form1" method="POST" enctype="mutipart/form-data" class="validate" novalidate="novalidate" action="{{ route('newsletters-update', [$editNews->id]) }}">
+                <form role="form" id="form1" method="POST" enctype="multipart/form-data" class="validate" novalidate="novalidate" action="{{ route('newsletters-update', [$editNews->id]) }}">
                     {{csrf_field()}}
                     <div class="form-group"> <label class="control-label">Title</label>
                         <input type="text" class="form-control" name="title" data-validate="required" required placeholder="Enter Title" value="{{ $editNews->title }}">
@@ -60,7 +60,7 @@
                         <input type="text" class="form-control" name="url" data-validate="required" placeholder="Enter Url" value="{{ $editNews->url }}">
                     </div>
                     <div class="form-group"> <label class="control-label">Photo</label>
-                        <input type="file" class="form-control" name="photo" data-validate="required" >
+                        <input type="file" class="form-control" name="photo" data-validate="required" accept="image/x-png,image/gif,image/jpeg" />
                     </div>
                     <div class="form-group"> <label class="control-label">Date and hours</label>
                         <input type="date" class="form-control" name="date" data-validate="required"placeholder="Select" Required value="{{ $editNews->date }}">
