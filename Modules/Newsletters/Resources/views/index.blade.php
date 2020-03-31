@@ -22,7 +22,8 @@
                 @foreach ($newsLetters as $newsLetter)
                 <tr>
                     <td>
-                        <img src="https://asset.lemde.fr/newsletters/thumbnails/a-la-une.png" width="100" height="100"></td>
+                        <img src="{{url('uploads/photo/'.$newsLetter->photo)}}" width="100" height="100">
+                    </td>
                     <td>{{ $newsLetter->title }}</td>
                     <td>{{ $newsLetter->url }}</td>
                     <td>{{ $newsLetter->caption }}</td>

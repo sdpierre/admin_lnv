@@ -23,16 +23,9 @@ class NewslettersController extends Controller
      */
     public function index()
     {
+
         $baseUrl = $this->url->to('/');
         $newsLetters = NewsLetter::orderBy('id', 'DESC')->get()->all();
-        foreach ($newsLetters as $key => $value) {
-            $photo = $value->photo;
-            if ($photo) {
-                $newsLetters[$key]->photo = $baseUrl;
-            } else {
-                $newsLetters[$key]->photo = 'not';
-            }
-        }
         return view('newsletters::index')->with('newsLetters', $newsLetters);
     }
 
@@ -109,14 +102,15 @@ class NewslettersController extends Controller
             //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
             $photo = $_FILES["photo"]["name"];
+        } else {
+            $photo = 'photo not selected';
         }
-        $photo = 'photo not selected';
         $updateNews = NewsLetter::findOrFail($id);
         $updateNews->title       = $request->title;
         $updateNews->caption     = $request->caption;
         $updateNews->description = $request->description;
         $updateNews->url         = $request->url;
-        $updateNews->photo       = " ";
+        $updateNews->photo       = $photo;
         $updateNews->date        = $request->date;
         $updateNews->active      = 1;
         $updatednews             = $updateNews->update();

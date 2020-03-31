@@ -1318,6 +1318,7 @@
 
 						<!-- Demo Settings -->
 						<script src="/assets/js/neon-demo.js"></script>
+						<script src="/js/jquery.datetimepicker"></script>
 
 					</body>
 					</html>
