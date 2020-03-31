@@ -118,6 +118,24 @@ class NewslettersController extends Controller
     }
 
     /**
+     *
+     *
+     *
+     */
+    public function updateStatus(Request $request)
+    {
+        $updateStatus = NewsLetter::findOrFail($request->id);
+        if ($updateStatus->status) {
+            $updateStatus->status = false;
+            $res = $updateStatus->update();
+        } else {
+            $updateStatus->status = true;
+            $res = $updateStatus->update();
+        }
+        return redirect('newsletters');
+    }
+
+    /**
      * Remove the specified resource from storage.
      * @param int $id
      * @return Response

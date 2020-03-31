@@ -17,4 +17,5 @@ Route::prefix('newsletters')->group(function() {
     Route::get('delete/{id}', 'NewslettersController@destroy')->name('newsletters-delete');
     Route::get('edit/{id}', 'NewslettersController@edit')->name('newsletters-edit');
     Route::post('update/{id}', 'NewslettersController@update')->name('newsletters-update');
+    Route::get('update-status/', 'NewslettersController@updateStatus')->name('update-status');
 });

@@ -30,9 +30,10 @@
                     <td>{{ $newsLetter->description }}</td>
                     <td>{{ $newsLetter->title }}</td>
                     <td>
-                        <div class="make-switch switch-mini has-switch">
+                        <!-- <div class="make-switch switch-mini has-switch">
                             <div class="switch-off switch-animate"><input type="checkbox"><span class="switch-left switch-mini">ON</span><label class="switch-mini">&nbsp;</label><span class="switch-right switch-mini">OFF</span></div>
-                        </div>
+                        </div> -->
+                        <input type="checkbox" name="status" class="statusCheckbox" data-id="{{ $newsLetter->id }}" {{ ($newsLetter->status) ? 'checked="checked" ' : '' }} >
                     </td>
                     <td class="d-flex">
                         <a href="{{ route('newsletters-delete', [$newsLetter->id]) }}"><button class="btn btn-danger mr-2 mb-1">Delete</button></a>
@@ -65,7 +66,7 @@
                         <input type="file" class="form-control" name="photo" data-validate="required" accept="image/x-png,image/gif,image/jpeg" />
                     </div>
                     <div class="form-group"> <label class="control-label">Date and hours</label>
-                        <input type="date" class="form-control" name="date" data-validate="required"placeholder="Select" Required value="{{ $editNews->date }}">
+                        <input type="text" class="form-control" name="date" data-validate="required"placeholder="Select" Required value="{{ $editNews->date }}">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Update</button>
@@ -76,4 +77,16 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('.statusCheckbox').on('change', function(){
+            id = jQuery(this).data("id");
+            jQuery.ajax({
+                type: "GET", 
+                url: "{{route('update-status')}}",
+                data: {id:id}
+            });
+        });
+    });
+</script>
 @stop
