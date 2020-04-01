@@ -28,7 +28,7 @@
                     <td>{{ $newsLetter->url }}</td>
                     <td>{{ $newsLetter->caption }}</td>
                     <td>{{ $newsLetter->description }}</td>
-                    <td>{{ $newsLetter->title }}</td>
+                    <td>{{ $newsLetter->date }}</td>
                     <td>
                         <!-- <div class="make-switch switch-mini has-switch">
                             <div class="switch-off switch-animate switch">
