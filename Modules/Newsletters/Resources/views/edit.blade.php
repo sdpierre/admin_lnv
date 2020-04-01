@@ -52,21 +52,44 @@
                     {{csrf_field()}}
                     <div class="form-group"> <label class="control-label">Title</label>
                         <input type="text" class="form-control" name="title" data-validate="required" required placeholder="Enter Title" value="{{ $editNews->title }}">
+                        @if($errors->has('title'))
+                            <div class="text-danger">{{ $errors->first('title') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Caption</label>
                         <input type="text" class="form-control" name="caption" data-validate="required"placeholder="Enter Caption" value="{{ $editNews->caption }}">
+                        @if($errors->has('caption'))
+                            <div class="text-danger">{{ $errors->first('caption') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Description</label>
                         <input type="text" class="form-control" name="description" data-validate="required"placeholder="Enter Description" value="{{ $editNews->description }}">
+                        @if($errors->has('description'))
+                            <div class="text-danger">{{ $errors->first('description') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Url</label>
                         <input type="text" class="form-control" name="url" data-validate="required" placeholder="Enter Url" value="{{ $editNews->url }}">
+                        @if($errors->has('url'))
+                            <div class="text-danger">{{ $errors->first('url') }}</div>
+                        @endif
                     </div>
-                    <div class="form-group"> <label class="control-label">Photo</label>
-                        <input type="file" class="form-control" name="photo" data-validate="required" accept="image/x-png,image/gif,image/jpeg" />
+                    <div class="form-group d-flex"> <label class="control-label">Photo</label>
+                        <div>
+                            <img class="ml-1" src="{{url('uploads/photo/'.$editNews->photo)}}" height="50" width="50">
+                        </div>
+                        <div>
+                            <input type="file" class="form-control" name="photo" data-validate="required" accept="image/x-png,image/gif,image/jpeg" />
+                            @if($errors->has('photo'))
+                            <div class="text-danger">{{ $errors->first('photo') }}</div>
+                        @endif
+                        </div>
                     </div>
                     <div class="form-group"> <label class="control-label">Date and hours</label>
                         <input type="text" class="form-control" name="date" data-validate="required"placeholder="Select" Required value="{{ $editNews->date }}">
+                        @if($errors->has('date'))
+                            <div class="text-danger">{{ $errors->first('date') }}</div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Update</button>

@@ -38,7 +38,7 @@
                                 <span class="switch-right switch-mini">OFF</span>
                             </div>
                         </div> -->
-                        <input type="checkbox" name="status" class="statusCheckbox" data-id="{{ $newsLetter->id }}" {{ ($newsLetter->status) ? 'checked="checked" ' : '' }} >
+                        <input type="checkbox" name="status" class="statusCheckbox" data-id="{{ $newsLetter->id }}" {{ ($newsLetter->active) ? 'checked="checked" ' : '' }} >
                     </td>
                     <td class="d-flex">
                         <a href="{{ route('newsletters-delete', [$newsLetter->id]) }}"><button class="btn btn-danger mr-2 mb-1">Delete</button></a>
@@ -57,21 +57,39 @@
                     {{csrf_field()}}
                     <div class="form-group"> <label class="control-label">Title</label>
                         <input type="text" class="form-control" name="title" data-validate="required" required placeholder="Enter Title">
+                        @if($errors->has('title'))
+                            <div class="text-danger">{{ $errors->first('title') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Caption</label>
                         <input type="text" class="form-control" name="caption" data-validate="required"placeholder="Enter Caption">
+                        @if($errors->has('caption'))
+                            <div class="text-danger">{{ $errors->first('caption') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Description</label>
                         <input type="text" class="form-control" name="description" data-validate="required"placeholder="Enter Description">
+                        @if($errors->has('description'))
+                            <div class="text-danger">{{ $errors->first('description') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Url</label>
                         <input type="text" class="form-control" name="url" data-validate="required" placeholder="Enter Url">
+                        @if($errors->has('url'))
+                            <div class="text-danger">{{ $errors->first('url') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Photo</label>
                         <input type="file" class="form-control" name="photo" data-validate="required" accept="image/x-png,image/gif,image/jpeg" />
+                        @if($errors->has('photo'))
+                            <div class="text-danger">{{ $errors->first('photo') }}</div>
+                        @endif
                     </div>
                     <div class="form-group"> <label class="control-label">Date and hours</label>
                         <input type="text" class="form-control" name="date" data-validate="required"placeholder="Select" Required>
+                        @if($errors->has('date'))
+                            <div class="text-danger">{{ $errors->first('date') }}</div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Save</button>

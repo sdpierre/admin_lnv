@@ -7,6 +7,8 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\NewsLetter;
+use Validator;
+use Redirect;
 
 class NewslettersController extends Controller
 {
@@ -46,14 +48,28 @@ class NewslettersController extends Controller
     public function store(Request $request)
     {
 
+        $rules = [
+            'title'         => 'required',
+            'caption'       => 'required',
+            'description'   => 'required',
+            'url'           => 'required',
+            'photo'         => 'required',
+            'date'          => 'required',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+
         if ($request->hasFile('photo')) {
             $target_dir = public_path()."/uploads/photo/";
             $target_file = $target_dir . basename($_FILES["photo"]["name"]);
             //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
             $photo = $_FILES["photo"]["name"];
+        } else {
+            $photo = 'image.jpg';
         }
-        $photo = 'photo not selected';
         $createNews              = new NewsLetter();
         $createNews->title       = $request->title;
         $createNews->caption     = $request->caption;
@@ -96,23 +112,36 @@ class NewslettersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'title'         => 'required',
+            'caption'       => 'required',
+            'description'   => 'required',
+            'url'           => 'required',
+            'date'          => 'required',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
+        $changePhoto = false;
         if ($request->hasFile('photo')) {
+            $changePhoto = true;
             $target_dir = public_path()."/uploads/photo/";
             $target_file = $target_dir . basename($_FILES["photo"]["name"]);
             //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
             $photo = $_FILES["photo"]["name"];
-        } else {
-            $photo = 'photo not selected';
         }
         $updateNews = NewsLetter::findOrFail($id);
         $updateNews->title       = $request->title;
         $updateNews->caption     = $request->caption;
         $updateNews->description = $request->description;
         $updateNews->url         = $request->url;
-        $updateNews->photo       = $photo;
+        if ($changePhoto) {
+            $updateNews->photo       = $photo;
+        }
         $updateNews->date        = $request->date;
-        $updateNews->active      = 1;
+        $updateNews->active      = true;
         $updatednews             = $updateNews->update();
         return redirect('newsletters');
     }
@@ -125,11 +154,11 @@ class NewslettersController extends Controller
     public function updateStatus(Request $request)
     {
         $updateStatus = NewsLetter::findOrFail($request->id);
-        if ($updateStatus->status) {
-            $updateStatus->status = false;
+        if ($updateStatus->active == true) {
+            $updateStatus->active = false;
             $res = $updateStatus->update();
         } else {
-            $updateStatus->status = true;
+            $updateStatus->active = true;
             $res = $updateStatus->update();
         }
         return redirect('newsletters');
