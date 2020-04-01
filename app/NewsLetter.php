@@ -9,6 +9,6 @@ class NewsLetter extends Model
     protected $table = "newsletters";
 
     protected $fillable = [
-        'title', 'url', 'caption', 'description', 'photo', 'date', 'status'
+        'title', 'url', 'caption', 'description', 'photo', 'date', 'active',
     ];
 }

@@ -155,10 +155,10 @@ class NewslettersController extends Controller
     {
         $updateStatus = NewsLetter::findOrFail($request->id);
         if ($updateStatus->active == true) {
-            $updateStatus->active = false;
+            $updateStatus->active = '0';
             $res = $updateStatus->update();
         } else {
-            $updateStatus->active = true;
+            $updateStatus->active = '1';
             $res = $updateStatus->update();
         }
         return redirect('newsletters');
