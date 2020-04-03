@@ -1,0 +1,14 @@
+{
+    "name": "Widgets",
+    "alias": "widgets",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Widgets\\Providers\\WidgetsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

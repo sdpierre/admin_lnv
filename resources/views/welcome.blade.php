@@ -95,7 +95,20 @@
 					</a>
 				</li>
 				
-			
+				<li>
+					<a href="{{ url('/') }}/medias">
+						<i class="entypo-camera"></i>
+						<span class="title">Apparence</span>
+					</a>
+					<ul>
+						<li>
+							<a href="{{ url('/') }}/widgets/">
+								<span class="title">Widgets</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
 				<li>
 					<a href="{{ url('/') }}/medias">
 						<i class="entypo-camera"></i>
@@ -114,6 +127,7 @@
 						</li>
 					</ul>
 				</li>
+				
 
 				<li>
 					<a href="/user">
