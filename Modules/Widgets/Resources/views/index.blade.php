@@ -54,6 +54,14 @@
                     </div>
                 </div>
 
+                <div class="form-group"> 
+                    <div class="col-sm-12">
+                        <label>Date</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="date" value="{{ $editCorona->date }}">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group"> 
                     <div class="col-sm-12">

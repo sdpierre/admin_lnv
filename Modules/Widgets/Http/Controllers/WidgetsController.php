@@ -73,6 +73,7 @@ class WidgetsController extends Controller
         $updateCorona->resultats = $request->resultats;
         $updateCorona->cas_negatifs = $request->cas_negatifs;
         $updateCorona->cas_confirmes = $request->cas_confirmes;
+        $updateCorona->date = $request->date;
         $updateCorona->update();
         return redirect('widgets');
 
