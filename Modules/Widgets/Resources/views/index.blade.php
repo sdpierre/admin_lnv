@@ -56,6 +56,15 @@
 
                 <div class="form-group"> 
                     <div class="col-sm-12">
+                        <label>Décès</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="deces" value="{{ $editCorona->deces }}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group"> 
+                    <div class="col-sm-12">
                         <label>Date</label>
                         <div class="form-group">
                             <input type="text" class="form-control" name="date" value="{{ $editCorona->date }}">
