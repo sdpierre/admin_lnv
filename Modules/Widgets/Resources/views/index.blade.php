@@ -56,7 +56,7 @@
 
                 <div class="form-group"> 
                     <div class="col-sm-12">
-                        <label>Décès Confirmés</label>
+                        <label>Décès</label>
                         <div class="form-group">
                             <input type="text" class="form-control" name="deces" value="{{ $editCorona->deces }}">
                         </div>
