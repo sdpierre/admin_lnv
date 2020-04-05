@@ -94,6 +94,13 @@
 						<span class="title">Posts</span>
 					</a>
 				</li>
+
+				<li>
+					<a href="{{ url('/') }}/breaking">
+						<i class="entypo-pencil"></i>
+						<span class="title">Breaking News</span>
+					</a>
+				</li>
 				
 				<li>
 					<a href="{{ url('/') }}/medias">

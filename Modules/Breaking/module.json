@@ -1,0 +1,14 @@
+{
+    "name": "Breaking",
+    "alias": "breaking",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Breaking\\Providers\\BreakingServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
