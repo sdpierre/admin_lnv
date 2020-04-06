@@ -67,7 +67,7 @@
                     <div class="col-sm-12">
                         <label>Date</label>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="date" value="{{ $editCorona->date }}">
+                            <input class="datepicker" name="date" value="{{ $editCorona->date }}">
                         </div>
                     </div>
                 </div>
@@ -87,4 +87,14 @@
         </div>
     </div>
 </div>
+
+@section('javascript')
+<script>
+$('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    startDate: '-3d'
+})
+</script>
+@stop
+
 @stop
