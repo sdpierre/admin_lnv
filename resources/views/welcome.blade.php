@@ -148,7 +148,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ url('/') }}/newsletters/emails">
+							<a href="{{ url('/') }}/newsletter-emails">
 								<span class="title">All emails</span>
 							</a>
 						</li>
