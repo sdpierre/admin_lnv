@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\NewsLetter;
+use App\Emails;
 use Validator;
 use Redirect;
 
@@ -39,8 +40,8 @@ class NewslettersController extends Controller
     {
 
         $baseUrl = $this->url->to('/');
-        $newsLetters = NewsLetter::orderBy('id', 'DESC')->get()->all();
-        return view('newsletters::index')->with('newsLetters', $newsLetters);
+        $emails = Emails::orderBy('id', 'DESC')->get()->all();
+        return view('newsletters::emails')->with('emails', $emails);
     }
 
     /**

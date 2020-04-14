@@ -137,7 +137,7 @@
 				
 
 				<li>
-					<a href="/user">
+					<a href="#">
 						<i class="entypo-mail"></i>
 						<span class="title">Newsletters</span>
 					</a>
@@ -148,7 +148,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="{{ url('/') }}/newsletter-emails">
+							<a href="{{ url('/') }}/newsletters/emails">
 								<span class="title">All emails</span>
 							</a>
 						</li>
