@@ -25,7 +25,7 @@
                         <img src="{{url('uploads/photo/'.$newsLetter->photo)}}" width="100" height="100">
                     </td>
                     <td>{{ $newsLetter->title }}</td>
-                    <td> <a href="{{ $newsLetter->url }}"> {{ $newsLetter->url }} </a> </td>
+                    <td> <a href="{{ $newsLetter->url }}" target="_blank"> {{ $newsLetter->url }} </a> </td>
                     <td>{{ $newsLetter->caption }}</td>
                     <td>{{ $newsLetter->description }}</td>
                     <td>{{ $newsLetter->date }}</td>
