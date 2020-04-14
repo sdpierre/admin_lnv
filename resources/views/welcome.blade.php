@@ -148,13 +148,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="/user/">
+							<a href="{{ url('/') }}/newsletters/emails">
 								<span class="title">All emails</span>
 							</a>
 						</li>
 
 						<li>
-							<a href="/user/create">
+							<a href="{{ url('/') }}/newsletters/custom">
 								<span class="title">Custom</span>
 							</a>
 						</li>

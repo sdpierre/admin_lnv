@@ -32,6 +32,18 @@ class NewslettersController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    public function all_emails()
+    {
+
+        $baseUrl = $this->url->to('/');
+        $newsLetters = NewsLetter::orderBy('id', 'DESC')->get()->all();
+        return view('newsletters::index')->with('newsLetters', $newsLetters);
+    }
+
+    /**
      * Show the form for creating a new resource.
      * @return Response
      */
