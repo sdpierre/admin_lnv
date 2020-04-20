@@ -6,10 +6,13 @@ use Illuminate\Routing\UrlGenerator;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
-use App\NewsLetter;
-use App\Emails;
+use Modules\Newsletters\Entities\NewsLetter;
+use Modules\Newsletters\Entities\Emails;
 use Validator;
 use Redirect;
+use Mail;
+
+
 
 class NewslettersController extends Controller
 {
@@ -186,5 +189,16 @@ class NewslettersController extends Controller
     {
         NewsLetter::destroy($id);
         return redirect('newsletters');
+    }
+
+    public function sendToday()
+    {	
+        $data = [];
+        $titre = 'Test Newsletter';
+        Mail::send('newsletters::Html.today', $data, function ($message) use ($titre) {
+            $message->subject($titre);
+            $message->from('newsletter@lenouvelliste.com', 'Le Nouvelliste');
+            $message->to('stanleydanypierre@gmail.com');
+        });
     }
 }
