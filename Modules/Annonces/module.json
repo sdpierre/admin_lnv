@@ -1,0 +1,14 @@
+{
+    "name": "Annonces",
+    "alias": "annonces",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Annonces\\Providers\\AnnoncesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

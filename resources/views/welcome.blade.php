@@ -87,6 +87,20 @@
 						<span class="title">Dashboard</span>
 					</a>
 				</li>
+	  			
+				<li>
+					<a href="{{ url('/') }}/annonces">
+						<i class="entypo-pencil"></i>
+						<span class="title">Annonces</span>
+					</a>
+					<!-- <ul>
+						<li>
+							<a href="{{ url('/') }}/annonces-new/">
+								<span class="title">Ajouter</span>
+							</a>
+						</li>
+					</ul> -->
+				</li>
 
 				<li>
 					<a href="/addnew/post">
