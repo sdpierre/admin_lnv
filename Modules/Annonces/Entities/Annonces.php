@@ -13,7 +13,7 @@ class Annonces extends Model
 
 
     protected $fillable = [
-        'feuillederoute', 'rubriqueid', 'titre', 'texte', 'datepublication','departements','villes','id_annonces',
+        'feuillederoute', 'rubriqueid', 'titre', 'texte', 'datepublication','departement_id','villes','id_annonces',
 	];
 	
 
