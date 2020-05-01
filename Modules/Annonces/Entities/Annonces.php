@@ -37,7 +37,7 @@ class Annonces extends Model
 
 	public function AllAnnonces()
 	{
-	  return Annonces::all();
+	  return Annonces::orderBy('id_annonces', 'DESC')->paginate(5);
 	}
 
 }

@@ -21,7 +21,10 @@
 	<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/skins/blue.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/lightbox.css') }}">
-	<script src="{{ asset('js/jquery-ui/js/jquery-3.2.1.min.js') }}"></script>
+	<link rel="stylesheet" href="{{ asset('css/datepicker.css') }}">
+	<!-- <script src="{{ asset('js/jquery-ui/js/jquery-3.2.1.min.js') }}"></script> -->
+	
+	
 	
 	<script>
 	function resizeIframe(obj) {
@@ -319,9 +322,12 @@
 
 
 	<!-- Bottom scripts (common) -->
+
 	<script src="{{ asset('js/gsap/main-gsap.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('js/jquery-ui/js/jquery-ui.min.js') }}"></script>
+	<!-- <script src="{{ asset('js/jquery-ui/js/jquery-ui.min.js') }}"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 	<script src="{{ asset('js/joinable.js') }}"></script>
 	<script src="{{ asset('js/resizeable.js') }}"></script>
 	<script src="{{ asset('js/neon-api.js') }}"></script>

@@ -4,12 +4,8 @@
 
 @section('content')
 
-
-<hr>
 <h2>Annonces</h2>
-<hr>
 <br>
-
 <div class="row">
     <div class="col-sm-4">
     <form role="form" id="form1" method="POST" enctype="multipart/form-data" class="validate" novalidate="novalidate" action="{{ route('publier_annonce') }}">
@@ -95,11 +91,13 @@
 <div class="control-group">
  <label for="textfield" class="control-label"><strong>Date</strong></label>
   <div class="controls">
-   <input name="date"  class="form-control"  type="date" value="<?php if(isset($date))echo $date;?>"/>
+   <input type="text" name="date" class="form-control date" placeholder="Choisissez les dates" value="<?php if(isset($date))echo $date;?>"/>
   </div>
 </div>
 
 <br>
+
+
 
 
 <div class="form-actions">
@@ -147,4 +145,13 @@
 
 
 
+@endsection
+
+@section('javascript')
+<script>
+$('.date').datepicker({
+  multidate: true,
+	format: 'mm/dd/yyyy'
+});
+</script>
 @endsection
