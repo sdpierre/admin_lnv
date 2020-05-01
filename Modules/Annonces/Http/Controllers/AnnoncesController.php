@@ -71,7 +71,7 @@ class AnnoncesController extends Controller
 				$createAnnces->titre                = $request->titre;
 				$createAnnces->texte                = $request->texte;
 				$createAnnces->datepublication      = $request->date;
-				$createAnnces->departements         = $request->departement_id;
+				$createAnnces->departement_id         = $request->departements;
 				$createAnnces->villes               = $request->villes;
 				$createAnnces                       = $createAnnces->save();
 				return redirect('annonces');
@@ -83,7 +83,7 @@ class AnnoncesController extends Controller
 				$updateAnnces->titre                = $request->titre;
 				$updateAnnces->texte                = $request->texte;
 				$updateAnnces->datepublication      = $request->date;
-				$updateAnnces->departements         = $request->departement_id;
+				$updateAnnces->departement_id         = $request->departements;
 				$updateAnnces->villes               = $request->villes;
 				$updateAnnces                       = $updateAnnces->update();
 				return redirect('annonces');
