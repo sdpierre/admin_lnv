@@ -12,9 +12,10 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.2.0",
         "nesbot/carbon": "^2.27",
-        "symfony/translation-contracts": "^1.1.6",
-        "nwidart/laravel-modules": "^4.1"
+        "nwidart/laravel-modules": "^4.1",
+        "symfony/translation-contracts": "^1.1.6"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

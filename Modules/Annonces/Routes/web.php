@@ -13,4 +13,10 @@
 
 Route::prefix('annonces')->group(function() {
     Route::get('/', 'AnnoncesController@index');
+    Route::get('rubrique/{id}', 'AnnoncesController@rubrique')->name('annonces-rubrique');
+    Route::get('details/{id}', 'AnnoncesController@show')->name('details');
+    Route::post('search', 'AnnoncesController@search')->name('search');
+    Route::get('destroy/{id}', 'AnnoncesController@destroy')->name('destroy');
+    Route::post('publier_annonce', 'AnnoncesController@publier_annonce')->name('publier_annonce');
 });
+

@@ -13,7 +13,7 @@
                         	<div class="breadcrumb_area">
                             	<ul>
                                 	<li><a href="{{ URL::to('/') }}/annonces">Petites Annonces</a></li>    
-                                    <li><?php rubriqueShouw($key['rubriqueid']);?></li>
+                                    <li><?php //rubriqueShouw($key['rubriqueid']);?></li>
                                     <li>{{ $key->titre }}</li>
                                 </ul>
                             </div>
@@ -68,12 +68,12 @@
                             </div>
                             <div class="content_price_row">
                             	<span>Département</span>
-                                <p><?php selDepartmen($key['departement_id']);?></p>
+                                <p><?php //selDepartmen($key['departement_id']);?></p>
                                 <small><img src="{{asset('images/location_icon.png') }}" width="33" height="33" alt=""/></small>
                             </div>
                             <div class="content_price_row">
                             	<span>Ville</span>
-                                <p><?php  selville($key['ville_id']);?></p>
+                                <p><?php  //selville($key['ville_id']);?></p>
                                 <small><img src="{{asset('images/location_icon.png') }}" width="33" height="33" alt=""/></small>
                             </div>
                         </div>

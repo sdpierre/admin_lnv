@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Annonces\Entities;;
+namespace Modules\Annonces\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,11 +9,19 @@ class Annonces extends Model
 
 	protected $table = 'annonces';
 
+	protected $primaryKey = 'id_annonces';
+
+
+    protected $fillable = [
+        'feuillederoute', 'rubriqueid', 'titre', 'texte', 'datepublication','departements','villes','id_annonces',
+	];
+	
 
 	public function allwhere($searchD, $cat, $search, $depat, $ville)
 	{
 		return Annonces::where($search, 'LIKE', "%$search%")->where('rubriqueid', $cat)->where('departement', $depat)->where('ville', $ville)->paginate(5);
 	}
+
 	public function AnnoncesRubriq($id)
 	{
 
@@ -25,4 +33,11 @@ class Annonces extends Model
 
 		return Annonces::where('featured', 'TRUE')->paginate(5);
 	}
+
+
+	public function AllAnnonces()
+	{
+	  return Annonces::all();
+	}
+
 }

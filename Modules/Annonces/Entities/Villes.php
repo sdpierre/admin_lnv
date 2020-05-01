@@ -1,4 +1,4 @@
-<?php namespace App\Modules\Annonces\Models;
+<?php namespace Modules\Annonces\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,6 +1,7 @@
 
                 <div class="classifileld_top center_content">
-                   <?php echo Form::open(array('url' => 'search-annonces', 'method' => 'POST'));?>
+                <form role="form" id="form1" method="POST" enctype="multipart/form-data" class="validate" novalidate="novalidate" action="{{ route('search') }}">
+                    {{csrf_field()}}
                         <div class="classifileld_top_field">
                         	<div class="form-group pull-left"><input type="text" name="search"class="form-control" placeholder="Que recherchez-vous ?"/></div>
                             <div class="classifileld_top_right pull-right">
@@ -54,5 +55,5 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                   <?php echo Form::close() ?>
+                   </form>
                 </div>
