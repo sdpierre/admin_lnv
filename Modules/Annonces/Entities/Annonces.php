@@ -37,7 +37,7 @@ class Annonces extends Model
 
 	public function AllAnnonces()
 	{
-	  return Annonces::orderBy('datepublication', 'DESC')->take(20)->get();
+	  return Annonces::orderBy('created_at', 'DESC')->take(20)->get();
 	}
 
 }
