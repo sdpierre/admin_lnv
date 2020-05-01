@@ -72,7 +72,7 @@ class AnnoncesController extends Controller
 				$createAnnces->texte                = $request->texte;
 				$createAnnces->datepublication      = $request->date;
 				$createAnnces->departement_id         = $request->departements;
-				$createAnnces->villes               = $request->villes;
+				$createAnnces->ville_id               = $request->villes;
 				$createAnnces                       = $createAnnces->save();
 				return redirect('annonces');
 			}else{
@@ -84,7 +84,7 @@ class AnnoncesController extends Controller
 				$updateAnnces->texte                = $request->texte;
 				$updateAnnces->datepublication      = $request->date;
 				$updateAnnces->departement_id         = $request->departements;
-				$updateAnnces->villes               = $request->villes;
+				$updateAnnces->ville_id              = $request->villes;
 				$updateAnnces                       = $updateAnnces->update();
 				return redirect('annonces');
 			}
@@ -212,8 +212,8 @@ class AnnoncesController extends Controller
 		$updateAnnces->titre                = $request->titre;
 		$updateAnnces->texte                = $request->texte;
 		$updateAnnces->datepublication      = $request->date;
-		$updateAnnces->departements         = $request->departements;
-		$updateAnnces->villes               = $request->villes;
+		$updateAnnces->departement_id         = $request->departements;
+		$updateAnnces->ville_id               = $request->villes;
 		$updateAnnces                       = $updateAnnces->update();
 
 
