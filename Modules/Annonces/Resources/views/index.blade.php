@@ -8,14 +8,14 @@
 <br>
 <div class="row">
     <div class="col-sm-4">
-    <form role="form" id="form1" method="POST" enctype="multipart/form-data" class="validate" novalidate="novalidate" action="{{ route('publier_annonce') }}">
+    <form role="form" id="form1" method="POST" enctype="multipart/form-data" class="validate" action="{{ route('publier_annonce') }}">
                     {{csrf_field()}}
 
             <input type="hidden" name="id_annonces" value="<?php if(isset($id_annonces))echo $id_annonces;?>">
             <div class="control-group">
       <label for="textfield" class="control-label">Feuille de route</label>
       <div class="controls">
-        <input type="text" name="feuillederoute" class="form-control" value="<?php if(isset($feuillederoute))echo $feuillederoute;?>"/>		
+        <input type="text" name="feuillederoute" class="form-control" value="<?php if(isset($feuillederoute))echo $feuillederoute;?>" required>		
       </div>
 </div>
 
@@ -70,7 +70,7 @@
 <div class="control-group">
  <label for="textfield" class="control-label"><strong>Titre</strong></label>
   <div class="controls">
-   <input type="text" class="form-control" name="titre" value="<?php if(isset($titre))echo $titre;?>"/>
+   <input type="text" class="form-control" name="titre" value="<?php if(isset($titre))echo $titre;?>" required>
 		  
   </div>
 </div>
@@ -80,7 +80,7 @@
 <div class="control-group">
  <label for="textfield" class="control-label"><strong>Texte</strong></label>
   <div class="controls">
-   <textarea name="texte" cols="40" class="form-control" rows="10" wrap="VIRTUAL" value="<?php if(isset($texte))echo $texte;?>"/><?php if(isset($texte))echo $texte;?></textarea>
+   <textarea name="texte" cols="40" class="form-control" rows="10" wrap="VIRTUAL" value="<?php if(isset($texte))echo $texte;?>" required><?php if(isset($texte))echo $texte;?></textarea>
   </div>
 </div>
 
@@ -91,7 +91,7 @@
 <div class="control-group">
  <label for="textfield" class="control-label"><strong>Date</strong></label>
   <div class="controls">
-   <input type="text" name="date" class="form-control date" placeholder="Choisissez les dates" value="<?php if(isset($date))echo $date;?>"/>
+   <input type="text" name="date" class="form-control date" placeholder="Choisissez les dates" value="<?php if(isset($date))echo $date;?>" required>
   </div>
 </div>
 
@@ -151,7 +151,11 @@
 <script>
 $('.date').datepicker({
   multidate: true,
-	format: 'mm/dd/yyyy'
+	format: 'mm/dd/yyyy',
+  todayHighlight: true,
+  weekStart: 1,
+  language:'fr'
+  
 });
 </script>
 @endsection

@@ -325,9 +325,12 @@
 
 	<script src="{{ asset('js/gsap/main-gsap.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('js/moment.js') }}"></script>
 	<!-- <script src="{{ asset('js/jquery-ui/js/jquery-ui.min.js') }}"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+	
+	<script src="{{ asset('js/bootstrap-datepicker.fr.min.js') }}"></script>
 	<script src="{{ asset('js/joinable.js') }}"></script>
 	<script src="{{ asset('js/resizeable.js') }}"></script>
 	<script src="{{ asset('js/neon-api.js') }}"></script>
