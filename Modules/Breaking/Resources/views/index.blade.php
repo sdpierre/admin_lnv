@@ -36,22 +36,17 @@
                 </div>
 
                 <div class="form-group">
-                <div class="controls">
-                    <button type="submit" class="btn btn-primary">Publier</button>
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">Publier</button>
+                    </div>
                 </div>
-                </div>
-
-  
-                
 
             </div>
         </div>
     </div>
-</div>
 
-</div>
-<div class="col-sm-4">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate excepturi repudiandae ea! Quisquam dolores in, quo, alias beatae eius a suscipit numquam maiores accusantium perspiciatis fugit nisi enim rem ipsa.
-</div>
+    <div class="col-sm-8">
+        Table
+    </div>
 </div>
 @stop
