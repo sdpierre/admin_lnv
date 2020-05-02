@@ -87,7 +87,14 @@
 				<li>
 					<a href="/dashboard">
 						<i class="entypo-gauge"></i>
-						<span class="title">Dashboard</span>
+						<span class="title">Tableau de bord</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/dashboard">
+						<i class="entypo-search"></i>
+						<span class="title">Recherche</span>
 					</a>
 				</li>
 	  			
@@ -96,13 +103,18 @@
 						<i class="entypo-pencil"></i>
 						<span class="title">Annonces</span>
 					</a>
-					<!-- <ul>
+					<ul>
 						<li>
-							<a href="{{ url('/') }}/annonces-new/">
-								<span class="title">Ajouter</span>
+							<a href="{{ url('/') }}/annonces">
+								<span class="title">List</span>
 							</a>
 						</li>
-					</ul> -->
+						<li>
+							<a href="{{ url('/') }}/annonces">
+								<span class="title">Les catégories</span>
+							</a>
+						</li>
+					</ul>
 				</li>
 
 				<li>

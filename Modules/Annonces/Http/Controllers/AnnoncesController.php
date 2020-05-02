@@ -163,8 +163,8 @@ class AnnoncesController extends Controller
 		foreach ($annonces_id as $key) {
 			$feuillederoute = $key->feuillederoute;
 			$rubriqueid = $key->rubriqueid;
-			$departements = $key->departements;
-			$villesid = $key->villes;
+			$departements = $key->departement_id;
+			$villesid = $key->ville_id;
 			$titre = $key->titre;
 			$texte = $key->texte;
 			$date = $key->datepublication;
