@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('article')->group(function() {
-    Route::get('/create', 'ArticleController@create');
+Route::prefix('search')->group(function() {
+    Route::get('/', 'SearchController@index');
 });

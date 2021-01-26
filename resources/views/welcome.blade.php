@@ -80,25 +80,24 @@
 
 			</header>
 
-
 			<ul id="main-menu" class="main-menu">
 				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
 				<li>
-					<a href="/dashboard">
+					<a href="{{ url('/') }}">
 						<i class="entypo-gauge"></i>
 						<span class="title">Tableau de bord</span>
 					</a>
 				</li>
 
 				<li>
-					<a href="/dashboard">
+					<a href="{{ url('/') }}/search">
 						<i class="entypo-search"></i>
 						<span class="title">Recherche</span>
 					</a>
 				</li>
 	  			
-				<li>
+				<!-- <li>
 					<a href="{{ url('/') }}/annonces">
 						<i class="entypo-pencil"></i>
 						<span class="title">Annonces</span>
@@ -115,12 +114,12 @@
 							</a>
 						</li>
 					</ul>
-				</li>
+				</li> -->
 
 				<li>
-					<a href="/addnew/post">
+					<a href="{{ url('/') }}/article/create">
 						<i class="entypo-pencil"></i>
-						<span class="title">Posts</span>
+						<span class="title">Article</span>
 					</a>
 				</li>
 

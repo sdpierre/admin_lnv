@@ -50,6 +50,15 @@ class User extends Authenticatable
 		->orwhere('users_groups.group_id',5)
 		->orderBy('first_name','ASC')
 		->get();
+    }
+    
+    public function get_collaborateurs() {
+		return  User::select('admins.id','first_name','last_name','admins.active')
+		->join('users_groups','users_groups.user_id','=','admins.id')
+		->where('users_groups.group_id',7)
+		->where('admins.active',1)
+		->orderBy('first_name','ASC')
+		->get();
 	}
 
 	public function articles(){
