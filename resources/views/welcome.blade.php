@@ -97,7 +97,7 @@
 					</a>
 				</li>
 	  			
-				<!-- <li>
+				<li>
 					<a href="{{ url('/') }}/annonces">
 						<i class="entypo-pencil"></i>
 						<span class="title">Annonces</span>
@@ -114,7 +114,7 @@
 							</a>
 						</li>
 					</ul>
-				</li> -->
+				</li>
 
 				<li>
 					<a href="{{ url('/') }}/article/create">
